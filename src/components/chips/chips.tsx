@@ -12,7 +12,6 @@ interface IProps {
 const Chips: FC<IProps> = ({ pokemonsChip, setPokemon }) => {
   const handleClick = (name: string) => {
     getPokemonInfo(name).then((res) => {
-      console.log(res);
       setPokemon(res);
     });
   };
