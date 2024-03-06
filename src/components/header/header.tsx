@@ -6,8 +6,14 @@ const Header: FC = () => {
   return (
     <Box component="header" paddingTop={"100px"}>
       <Grid container justifyContent="space-between" alignItems="center">
-        <Grid item height={"27px"}>
-          <Typography textTransform="uppercase">Покемоны API</Typography>
+        <Grid item border={"1px solid white"} padding={"6.5px"}>
+          <Typography
+            textTransform="uppercase"
+            fontSize={"12px"}
+            lineHeight={1}
+          >
+            Покемоны API
+          </Typography>
         </Grid>
         <Grid item>
           <Grid container alignItems="center" gap={"10px"}>
