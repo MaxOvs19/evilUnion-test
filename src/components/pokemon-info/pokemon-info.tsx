@@ -12,9 +12,10 @@ const PokemonInfo: FC<IProps> = ({ pokemonInfo }) => {
       container
       sx={{ background: "black", padding: "44px", color: "#A0A0A0" }}
       maxWidth={"484px"}
+      maxHeight={"500px"}
     >
       <Grid item>
-        <Typography variant="h3">
+        <Typography variant="h3" marginBottom={"40px"}>
           {pokemonInfo?.name?.length > 0
             ? pokemonInfo?.name[0]?.toUpperCase() + pokemonInfo?.name.slice(1)
             : "Select pokemon..."}
@@ -25,18 +26,20 @@ const PokemonInfo: FC<IProps> = ({ pokemonInfo }) => {
           <Image
             src={pokemonInfo?.sprites?.other?.dream_world?.front_default}
             alt="Pokemon img"
-            width={300}
-            height={300}
+            width={175}
+            height={175}
           />
         ) : (
           ""
         )}
       </Grid>
-      <Grid item>
-        {/* <Typography>Снялся в {pokemonInfo} сериях</Typography> */}
-        <Typography>id: {pokemonInfo?.id}</Typography>
-        <Typography>height: {pokemonInfo?.height}</Typography>
-        {/* <Typography>attack: {pokemonInfo?.stats[1]?.base_stat}</Typography> */}
+      <Grid item marginTop={"40px"}>
+        <Typography>Снялся в {pokemonInfo?.moves?.length} сериях</Typography>
+        <Typography fontSize={"17px"}>id: {pokemonInfo?.id}</Typography>
+        <Typography fontSize={"17px"}>height: {pokemonInfo?.height}</Typography>
+        <Typography fontSize={"17px"}>
+          attack: {pokemonInfo?.stats[1]?.base_stat}
+        </Typography>
       </Grid>
     </Grid>
   );

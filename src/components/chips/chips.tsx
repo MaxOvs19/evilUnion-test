@@ -21,10 +21,9 @@ const Chips: FC<IProps> = ({ pokemonsChip, setPokemon }) => {
     <Grid container gap={"8px"} maxWidth={"450px"}>
       {pokemonsChip.map((pok, index) => {
         return (
-          <Grid item>
+          <Grid item key={index}>
             <Chip
               label={pok.name}
-              key={index}
               onClick={() => handleClick(pok.name)}
               sx={{
                 color: "white",
