@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 
-export async function getPokemonInfo(name: string) {
+export async function getPokemonInfo(name: string | number) {
   try {
     const response: AxiosResponse = await axios.get(
       `https://pokeapi.co/api/v2/pokemon/${name}`

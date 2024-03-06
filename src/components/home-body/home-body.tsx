@@ -8,14 +8,11 @@ import { IPokemon } from "@/interface/pokemon";
 
 interface IProps {
   pokemons?: IPokemon[];
+  firstpokemon?: any;
 }
 
-const HomeBody: FC<IProps> = ({ pokemons }) => {
-  const [pokemonInfo, setPokemonInfo] = useState();
-
-  // useEffect(() => {
-  //   getPokemonInfo("bulbasaur").then((res) => setPokemonInfo(res));
-  // }, []);
+const HomeBody: FC<IProps> = ({ pokemons, firstpokemon }) => {
+  const [pokemonInfo, setPokemonInfo] = useState(firstpokemon);
 
   return (
     <Grid marginTop={"54px"} container justifyContent="space-between">
@@ -23,7 +20,9 @@ const HomeBody: FC<IProps> = ({ pokemons }) => {
         <Chips pokemonsChip={pokemons!} setPokemon={setPokemonInfo} />
       </Grid>
 
-      <Grid item>{/* <PokemonInfo pokemonInfo={pokemonInfo} /> */}</Grid>
+      <Grid item>
+        <PokemonInfo pokemonInfo={pokemonInfo} />
+      </Grid>
     </Grid>
   );
 };
